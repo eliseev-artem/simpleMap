@@ -11,7 +11,7 @@ import SwiftUI
 struct SimpleMapApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(location: Location(latitude: 51, longitude: 0))
         }
     }
 }

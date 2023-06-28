@@ -8,7 +8,7 @@
 import Foundation
 
 func fetchData() async throws -> [Location] {
-	let url = URL(string: "http://35.179.12.156/get/list/coords")!
+	let url = URL(string: "http://13.41.225.72/get/list/coords")!
 	let (data, _) = try await URLSession.shared.data(from: url)
 	return try JSONDecoder().decode([Location].self, from: data)
 }
