@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		098567FC2A4AC8C500E5AA2E /* PinDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098567FB2A4AC8C500E5AA2E /* PinDetail.swift */; };
-		098567FE2A4C0DFF00E5AA2E /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098567FD2A4C0DFF00E5AA2E /* Pin.swift */; };
 		098A162D2A4051F900477CCF /* SimpleMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A162C2A4051F900477CCF /* SimpleMapApp.swift */; };
 		098A162F2A4051F900477CCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A162E2A4051F900477CCF /* ContentView.swift */; };
 		098A16312A4051FA00477CCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098A16302A4051FA00477CCF /* Assets.xcassets */; };
@@ -19,7 +18,6 @@
 
 /* Begin PBXFileReference section */
 		098567FB2A4AC8C500E5AA2E /* PinDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDetail.swift; sourceTree = "<group>"; };
-		098567FD2A4C0DFF00E5AA2E /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		098A16292A4051F900477CCF /* SimpleMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		098A162C2A4051F900477CCF /* SimpleMapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMapApp.swift; sourceTree = "<group>"; };
 		098A162E2A4051F900477CCF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 			children = (
 				098A162E2A4051F900477CCF /* ContentView.swift */,
 				098567FB2A4AC8C500E5AA2E /* PinDetail.swift */,
-				098567FD2A4C0DFF00E5AA2E /* Pin.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,7 +165,6 @@
 				098A16472A41903800477CCF /* ApiCall.swift in Sources */,
 				098567FC2A4AC8C500E5AA2E /* PinDetail.swift in Sources */,
 				098A162F2A4051F900477CCF /* ContentView.swift in Sources */,
-				098567FE2A4C0DFF00E5AA2E /* Pin.swift in Sources */,
 				098A16452A418D6200477CCF /* Location.swift in Sources */,
 				098A162D2A4051F900477CCF /* SimpleMapApp.swift in Sources */,
 			);
