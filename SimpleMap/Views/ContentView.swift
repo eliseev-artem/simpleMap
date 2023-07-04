@@ -8,12 +8,16 @@
 import SwiftUI
 import MapKit
 
+var Locations: [Location] = []
+
 struct ContentView: View {
-    
-    @State var Locations: [Location] = []
+    let timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+        Task{
+            Locations = try await fetchData()
+        }
+    }
     @State var pinClicked: Bool = false
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
-    
     var body: some View {
         ZStack{
             Map(coordinateRegion: $region, annotationItems: Locations) { location in
@@ -32,7 +36,9 @@ struct ContentView: View {
                     }
                 }
             }
+        }
             .edgesIgnoringSafeArea(.all)
+// Make it start with some pins existing
             .task {
                 do {
                     Locations = try await fetchData()
@@ -42,9 +48,8 @@ struct ContentView: View {
             }
         }
     }
-}
 
-		
+    
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
