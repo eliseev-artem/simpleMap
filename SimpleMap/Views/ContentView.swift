@@ -8,12 +8,19 @@
 import SwiftUI
 import MapKit
 
+var Locations: [Location] = []
+
+let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+    Task{
+        Locations = try await fetchData()
+    }
+    print(Locations)
+    print("123")
+}
+
 struct ContentView: View {
-    
-    @State var Locations: [Location] = []
     @State var pinClicked: Bool = false
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
-    
     var body: some View {
         ZStack{
             Map(coordinateRegion: $region, annotationItems: Locations) { location in
@@ -32,19 +39,19 @@ struct ContentView: View {
                     }
                 }
             }
+        }
             .edgesIgnoringSafeArea(.all)
-            .task {
-                do {
-                    Locations = try await fetchData()
-                } catch {
-                    print(error)
-                }
-            }
+//            .task {
+//                do {
+//                    Locations = try await fetchData()
+//                } catch {
+//                    print(error)
+//                }
+//            }
         }
     }
-}
 
-		
+    
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
