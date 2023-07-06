@@ -11,7 +11,7 @@ import Foundation
 extension String: Error {}
 
 func fetchData() async throws -> [Location] {
-    guard let url = URL(string: "http://52.56.59.91/get/list/coords") else {
+    guard let url = URL(string: "http://35.178.202.67/get/list/coords") else {
         throw "Invalid API URL"
     }
     let (data, _) = try await URLSession.shared.data(from: url)
