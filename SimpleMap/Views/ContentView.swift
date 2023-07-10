@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import CoreLocation
 
 var Locations: [Location] = []
 
@@ -16,11 +17,13 @@ struct ContentView: View {
             Locations = try await fetchData()
         }
     }
-    @State var pinClicked: Bool = false
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
+    @State var manager = CLLocationManager()
+    @StateObject var locationManager = LocationDataManager()
+    @State private var pinClicked: Bool = false
+    
     var body: some View {
         ZStack{
-            Map(coordinateRegion: $region, annotationItems: Locations) { location in
+            Map(coordinateRegion: $locationManager.region, showsUserLocation: true, annotationItems: Locations) { location in
                 MapAnnotation(coordinate: location.coordinate) {
                     ZStack{
                         Button(action: {
@@ -36,19 +39,21 @@ struct ContentView: View {
                     }
                 }
             }
+            .onAppear{
+                manager.delegate = locationManager
+            }
         }
-            .edgesIgnoringSafeArea(.all)
-// Make it start with some pins existing
-            .task {
-                do {
-                    Locations = try await fetchData()
-                } catch {
-                    print(error)
-                }
+        .edgesIgnoringSafeArea(.all)
+        // Make it start with some pins existing
+        .task {
+            do {
+                Locations = try await fetchData()
+            } catch {
+                print(error)
             }
         }
     }
-
+}
     
 
 struct ContentView_Previews: PreviewProvider {

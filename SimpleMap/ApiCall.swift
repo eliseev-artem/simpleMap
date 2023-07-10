@@ -7,8 +7,13 @@
 
 import Foundation
 
+// Lets me throw a string for an error
+extension String: Error {}
+
 func fetchData() async throws -> [Location] {
-	let url = URL(string: "http://52.56.59.91/get/list/coords")!
-	let (data, _) = try await URLSession.shared.data(from: url)
+    guard let url = URL(string: "http://35.178.202.67/get/list/coords") else {
+        throw "Invalid API URL"
+    }
+    let (data, _) = try await URLSession.shared.data(from: url)
 	return try JSONDecoder().decode([Location].self, from: data)
 }
