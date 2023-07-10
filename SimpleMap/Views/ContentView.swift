@@ -18,12 +18,12 @@ struct ContentView: View {
         }
     }
     @State var manager = CLLocationManager()
-    @StateObject var locationManager = LocationDataManager()
+    @StateObject var locationController = LocationController()
     @State private var pinClicked: Bool = false
     
     var body: some View {
         ZStack{
-            Map(coordinateRegion: $locationManager.region, showsUserLocation: true, annotationItems: Locations) { location in
+            Map(coordinateRegion: $locationController.region, showsUserLocation: true, annotationItems: Locations) { location in
                 MapAnnotation(coordinate: location.coordinate) {
                     ZStack{
                         Button(action: {
@@ -40,7 +40,7 @@ struct ContentView: View {
                 }
             }
             .onAppear{
-                manager.delegate = locationManager
+                manager.delegate = locationController
             }
         }
         .edgesIgnoringSafeArea(.all)
