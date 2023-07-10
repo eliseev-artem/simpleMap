@@ -12,14 +12,16 @@ import MapKit
 
 
 class LocationDataManager : NSObject, ObservableObject, CLLocationManagerDelegate {
-    var locationManager = CLLocationManager()
-    @Published var authorizationStatus: CLAuthorizationStatus?
-    @Published var location: CLLocation?
+    
+    private let locationManager = CLLocationManager()
+    private var authorizationStatus: CLAuthorizationStatus?
+    private var location: CLLocation?
+    private var hasSetRegion = false
+    
     @Published var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 51, longitude: 0),
         span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
     )
-    @Published var hasSetRegion = false
     
     override init() {
         super.init()
@@ -57,7 +59,7 @@ class LocationDataManager : NSObject, ObservableObject, CLLocationManagerDelegat
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
                     self.location = location
-                    if hasSetRegion == false{
+                    if !hasSetRegion {
                         region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
                         hasSetRegion = true
                     }
