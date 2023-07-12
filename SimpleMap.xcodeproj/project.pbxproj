@@ -14,7 +14,7 @@
 		098A16342A4051FA00477CCF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098A16332A4051FA00477CCF /* Preview Assets.xcassets */; };
 		098A16452A418D6200477CCF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A16442A418D6200477CCF /* Location.swift */; };
 		098A16472A41903800477CCF /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A16462A41903800477CCF /* ApiCall.swift */; };
-		09B51A4B2A555458008B062B /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B51A4A2A555458008B062B /* LocationDataManager.swift */; };
+		09B51A4B2A555458008B062B /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B51A4A2A555458008B062B /* LocationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,7 @@
 		098A16332A4051FA00477CCF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		098A16442A418D6200477CCF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		098A16462A41903800477CCF /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
-		09B51A4A2A555458008B062B /* LocationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
+		09B51A4A2A555458008B062B /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		09B51A4C2A558C86008B062B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +63,7 @@
 				09B51A4C2A558C86008B062B /* Info.plist */,
 				098A16462A41903800477CCF /* ApiCall.swift */,
 				098A162C2A4051F900477CCF /* SimpleMapApp.swift */,
-				09B51A4A2A555458008B062B /* LocationDataManager.swift */,
+				09B51A4A2A555458008B062B /* LocationController.swift */,
 				098A16412A418AC800477CCF /* Models */,
 				098A163A2A40529800477CCF /* Views */,
 				098A16302A4051FA00477CCF /* Assets.xcassets */,
@@ -167,7 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09B51A4B2A555458008B062B /* LocationDataManager.swift in Sources */,
+				09B51A4B2A555458008B062B /* LocationController.swift in Sources */,
 				098A16472A41903800477CCF /* ApiCall.swift in Sources */,
 				098567FC2A4AC8C500E5AA2E /* PinDetail.swift in Sources */,
 				098A162F2A4051F900477CCF /* ContentView.swift in Sources */,
